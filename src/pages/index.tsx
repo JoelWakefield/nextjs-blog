@@ -4,6 +4,12 @@ import Card from "@/components/card";
 import { NextPageWithLayout } from "./_app";
 import Layout from "@/components/layout";
 import { ReactElement } from "react";
+ import { Metadata } from 'next';
+ 
+export const metadata: Metadata = {
+  title: 'The Try Angle',
+  description: 'A portfolio site for projects made by Joel Wakefield; these projects are usually made during twitch streams.',
+};
 
 const Home: NextPageWithLayout = () => {
   return (
