@@ -1,10 +1,24 @@
 import ContactCard from "@/components/contact";
-import styles from "@/app/page.module.css";
+import { NextPageWithLayout } from "./_app";
+import { ReactElement } from "react";
+import Layout from "@/components/layout";
 
-export default function Contact() {
-  <div className={styles.page}>
-    <h1>Reach Out</h1>
+const Contact: NextPageWithLayout = () => {
+  return (
+    <>
+      <h1>Reach Out</h1>
 
-    <ContactCard />
-  </div>
+      <ContactCard />
+    </>
+  )
 }
+
+Contact.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <Layout>
+      {page}
+    </Layout>
+  )
+}
+
+export default Contact;

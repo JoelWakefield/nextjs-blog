@@ -12,7 +12,7 @@ body {
 }
 
 body {
-  width: 48rem;
+  width: 56rem;
   margin: auto;
   color: var(--yellow);
   background: var(--darkblue);
@@ -20,7 +20,7 @@ body {
 }
 
 main {
-  max-width: 48rem;
+  max-width: 56rem;
 }
 
 * {
@@ -47,7 +47,7 @@ h1 {
 
 h2 {
   margin: 1rem;
-  font-size: 2rem;
+  font-size: 4rem;
 }
 
 h3 {
