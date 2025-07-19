@@ -10,12 +10,19 @@ const Projects: NextPageWithLayout = () => {
       <h1>Projects</h1>
       <div className={styles.ctaList}>
         <Card
+          title="Colored Claws"
+          href="/projects/colored-claws"
+          text="A 2D godot game about painting nails."
+          image="/colored_claws.png"
+        />
+              
+        <Card
           title="Reapers Waltz"
           href="/projects/reapers-waltz"
           text="A 2D horror dungeon crawler made for the Isekai Horror Jam."
           image="/reapers_waltz.png"
         />
-                  
+        
         <Card
           title="Gomi Moni"
           href="/projects/gomi-moni"
@@ -23,6 +30,13 @@ const Projects: NextPageWithLayout = () => {
           image="/gomi_moni.png"
         />
 
+        <Card
+          title="Vox Box"
+          href="/projects/vox-box"
+          text="An interactive music making sandbox."
+          image="/vox_box.png"
+        />
+        
         <Card
           title="Break Glass"
           href="/projects/break-glass"

@@ -1,9 +1,9 @@
+import { ReactElement } from "react";
+import Link from "next/link";
 import { NextPageWithLayout } from "@/pages/_app";
 import Layout from "@/components/layout";
-import { ReactElement } from "react";
-import styles from "@/app/page.module.css";
 import StatusBar from "@/components/statusbar";
-import Link from "next/link";
+import styles from "@/app/page.module.css";
 
 const GomiMoni: NextPageWithLayout = () => {
   return (
@@ -12,10 +12,11 @@ const GomiMoni: NextPageWithLayout = () => {
 
         <StatusBar 
           status={true} 
-          src="https://github.com/Wake1st/GomiMoni" play="https://wake1st.itch.io/gomi-moni" 
+          code="https://github.com/Wake1st/GomiMoni" 
+          play="https://wake1st.itch.io/gomi-moni" 
         />
 
-        <p className={styles.content}>This entry was made for the Society of Play - <Link className={styles.primary} href="https://itch.io/jam/pompous-trash-2025">Pompous Trash Jam 2025</Link>. My original idea was to make a mecha game. I was sharing my ideas with a friend, and they suggested &ldquo;why not make a game about roling trash into a hole&rdquo;? Needless to say, I was hooked - such a simple idea, but simple is best (especially for a 2 week jam).</p>
+        <p className={styles.content}>This entry was made for the <Link className={styles.primary} href="https://itch.io/jam/pompous-trash-2025">Society of Play - Pompous Trash Jam 2025</Link>. My original idea was to make a mecha game. I was sharing my ideas with a friend, and they suggested &ldquo;why not make a game about roling trash into a hole&rdquo;? Needless to say, I was hooked - such a simple idea, but simple is best (especially for a 2 week jam).</p>
 
         <p className={styles.content}>I first started out making a few &ldquo;vehicles&rdquo; for the player to control: normal, heavy, and flyer. The goal of each level is to role the normal (or Gomi) into a hole. The other vehicles are there to interact with specific mechanisms; when the mechanisms are activated, the hole is uncovered - the puzzle is &ldquo;unlocked&rdquo;!</p>
 
