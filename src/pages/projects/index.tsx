@@ -15,7 +15,14 @@ const Projects: NextPageWithLayout = () => {
           text="A 2D godot game about painting nails."
           image="/colored_claws.png"
         />
-              
+
+        <Card
+          title="Serpentes 3D"
+          href="/projects/serpentes-3d"
+          text="A 3D snake like game written in C."
+          image="/serpentes_3d.png"
+        />
+
         <Card
           title="Reapers Waltz"
           href="/projects/reapers-waltz"
@@ -28,6 +35,13 @@ const Projects: NextPageWithLayout = () => {
           href="/projects/gomi-moni"
           text="A godot game made for the Pompous Trash Jam 2025."
           image="/gomi_moni.png"
+        />
+
+        <Card
+          title="Game Design Patterns"
+          href="/projects/game-design-patterns"
+          text="A collection of C++ game design patterns implemented using Raylib."
+          image="/patterns.png"
         />
 
         <Card

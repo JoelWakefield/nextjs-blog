@@ -7,15 +7,15 @@ export default function Card(
 ) {
   return (
     <div className={styles.card}>
-        <Link href={href}>
-          <div className={styles.cardContent}>
-            <div>
-              <h3>{title}</h3>
-              <p className={styles.subtitle}>{text}</p>
-            </div>
-            <Image className={styles.cardImage} src={image} alt={title} width={240} height={180} />
+      <Link href={href}>
+        <div className={styles.cardContent}>
+          <div>
+            <h3>{title}</h3>
+            <p className={styles.subtitle}>{text}</p>
           </div>
-    </Link>
-      </div>
+          <Image className={styles.cardImage} src={image} alt={title} width={240} height={180} />
+        </div>
+      </Link>
+    </div>
   )
 }
