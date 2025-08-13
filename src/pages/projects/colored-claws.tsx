@@ -17,7 +17,7 @@ const ColoredClaws: NextPageWithLayout = () => {
         />
 
         <p className={styles.content}>
-          Every other week, I challenge myself to make a game from scratch to publish very quickly - the 8 Hour Power Jam! For this jam, I was inspired by Terry from the <Link className={styles.primary} href="https://www.youtube.com/@cutegamesclub">Cute Games Club</Link> to make a cute game about painting your nails. Due to the short time constraint (and because I REALLY wanted to finish) I decided to go with <Link className={styles.primary} href="https://godotengine.org/">Godot</Link>, the engine I&apos;m most familiar with.
+          Every other week, I challenge myself to make a game from scratch to publish very quickly - the 8 Hour Power Jam! For this jam, I was inspired by Terry from the <Link target="_blank" rel="noopener noreferrer" className={styles.primary} href="https://www.youtube.com/@cutegamesclub">Cute Games Club</Link> to make a cute game about painting your nails. Due to the short time constraint (and because I REALLY wanted to finish) I decided to go with <Link target="_blank" rel="noopener noreferrer" className={styles.primary} href="https://godotengine.org/">Godot</Link>, the engine I&apos;m most familiar with.
         </p>
 
         <p className={styles.content}>

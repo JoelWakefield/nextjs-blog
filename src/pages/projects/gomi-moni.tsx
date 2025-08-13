@@ -4,6 +4,7 @@ import Image from "next/image";
 import { NextPageWithLayout } from "@/pages/_app";
 import Layout from "@/components/layout";
 import StatusBar from "@/components/statusbar";
+import Details from "@/components/details";
 import styles from "@/app/page.module.css";
 
 const GomiMoni: NextPageWithLayout = () => {
@@ -17,6 +18,16 @@ const GomiMoni: NextPageWithLayout = () => {
           play="https://wake1st.itch.io/gomi-moni" 
         />
 
+        <Details 
+          time="1 Month" 
+          genre="3D Physics Puzzle" 
+          links={{
+            "Godot": "https://godotengine.org/",
+            "Blockbench": "https://www.blockbench.net/",
+            "BeepBox": "https://www.beepbox.co/"
+          }}
+        />
+
         <div className={styles.ctaText}>
           <div className={styles.content}>
             <h2 className={styles.infoHeading}><u>
@@ -26,11 +37,11 @@ const GomiMoni: NextPageWithLayout = () => {
               This entry was made for the <Link className={styles.primary} href="https://itch.io/jam/pompous-trash-2025">Society of Play - Pompous Trash Jam 2025</Link>. My original idea was to make a mecha game. I was sharing my ideas with a friend, and they suggested &ldquo;why not make a game about roling trash into a hole&rdquo;? Needless to say, I was hooked - such a simple idea, but simple is best (especially for a 2 week jam).
             </p>
           </div>
-          <Image src="/pompous_trash_jam.png" width={460} height={300} alt="Pompous Trash Jam Banner" />
+          <Image className={styles.ctaImage} src="/pompous_trash_jam.png" width={460} height={300} alt="Pompous Trash Jam Banner" />
         </div>
 
         <div className={styles.ctaText}>
-          <Image src="/gomi_moni_mechanics.png" width={420} height={300} alt="Gomi Moni Puzzle Solution" />
+          <Image className={styles.ctaImage} src="/gomi_moni_mechanics.png" width={420} height={300} alt="Gomi Moni Puzzle Solution" />
 
           <div className={styles.content}>
             <h2 className={styles.infoHeading}><u>
@@ -61,9 +72,9 @@ const GomiMoni: NextPageWithLayout = () => {
             <p>
               One aspect I also focused on a lot was presentation - my way of adding some &ldquo;juice&rdquo;. The camera in the main manu moves around a 3D scene; in fact, all the UI in the game is in 3D space (it felt more fun). The levels themselves use spotlights for illumination, but those same lights also start by focusing on specific parts of the level, providing &ldquo;hints&rdquo; to the player at that puzzles solution. Each light turns on, one by one, showing the player the steps of the solution; after they&apos;re all on, they expand to full light up the level.
             </p>
-
-            <Image src="/gomi_moni_lighting_2.png" width={810} height={140} alt="Gomi Moni Lighting" />
           </div>
+
+          <Image className={styles.ctaImage} src="/gomi_moni_lighting.gif" width={400} height={280} alt="Gomi Moni Lighting" unoptimized />
         </div>
 
         <div className={styles.ctaText}>

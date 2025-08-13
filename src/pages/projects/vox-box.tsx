@@ -17,7 +17,7 @@ const VoxBox: NextPageWithLayout = () => {
         />
 
         <p className={styles.content}>
-          Have you ever wanted to make music, but with blocks and toys instead of instraments? Then <Link className={styles.primary} href="https://www.oddada.com/">ODDADA</Link> might be for you. I&apos;ve spent hours playing it, and I wanted to make a version of my own, but instead of instraments, the user could record their own sounds and mix them, like <Link className={styles.primary} href="https://www.audacityteam.org/">Audacity</Link>.
+          Have you ever wanted to make music, but with blocks and toys instead of instraments? Then <Link target="_blank" rel="noopener noreferrer" className={styles.primary} href="https://www.oddada.com/">ODDADA</Link> might be for you. I&apos;ve spent hours playing it, and I wanted to make a version of my own, but instead of instraments, the user could record their own sounds and mix them, like <Link className={styles.primary} href="https://www.audacityteam.org/">Audacity</Link>.
         </p>
 
         <p className={styles.content}>

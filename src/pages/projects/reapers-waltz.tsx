@@ -17,7 +17,7 @@ const ReapersWaltz: NextPageWithLayout = () => {
         />
 
         <p className={styles.content}>
-          While I was streaming one day, someone hopped into the chat and started talking about a game jam they were working on for the <Link className={styles.primary} href="https://itch.io/jam/isekai-horror-jam">Isekai Horror Jam</Link>. Apparently, the original dev dropped the project without a heads up, and with 4 days left, they had no dev. Curriosity (and the ADHD twitch to tackle a vast challenge) took over and I decided to join with 4 days left to build a game from scratch... in <Link className={styles.primary} href="https://www.raylib.com/">Raylib</Link> (which I had just started learning).
+          While I was streaming one day, someone hopped into the chat and started talking about a game jam they were working on for the <Link target="_blank" rel="noopener noreferrer" className={styles.primary} href="https://itch.io/jam/isekai-horror-jam">Isekai Horror Jam</Link>. Apparently, the original dev dropped the project without a heads up, and with 4 days left, they had no dev. Curriosity (and the ADHD twitch to tackle a vast challenge) took over and I decided to join with 4 days left to build a game from scratch... in <Link target="_blank" rel="noopener noreferrer" className={styles.primary} href="https://www.raylib.com/">Raylib</Link> (which I had just started learning).
         </p>
         
         <p className={styles.content}>
@@ -25,7 +25,7 @@ const ReapersWaltz: NextPageWithLayout = () => {
         </p>
 
         <p className={styles.content}>
-          After the jam (and a much needed rest) I decided to rebuild the game in godot, which went much smoother. I don&apos;t regret my original attempt - I honestly enjoyed the challenge; I had to build many things that godot and other game engines handle automatically, like tilemapping and collisions. Even though those systems didn&apos;t get transfered into the godot version, they were a fun excercise to think through and build - and they did work (though poorly - game engines are much more sophisticated and should be used when building a quick/simple game). You can review the original code <Link className={styles.primary} href="https://github.com/Wake1st/reapers-waltz">here</Link> (running it might require some extra setup - so if you want help with that, open an issue and I&apos;ll do what I can to help).
+          After the jam (and a much needed rest) I decided to rebuild the game in godot, which went much smoother. I don&apos;t regret my original attempt - I honestly enjoyed the challenge; I had to build many things that godot and other game engines handle automatically, like tilemapping and collisions. Even though those systems didn&apos;t get transfered into the godot version, they were a fun excercise to think through and build - and they did work (though poorly - game engines are much more sophisticated and should be used when building a quick/simple game). You can review the original code <Link target="_blank" rel="noopener noreferrer" className={styles.primary} href="https://github.com/Wake1st/reapers-waltz">here</Link> (running it might require some extra setup - so if you want help with that, open an issue and I&apos;ll do what I can to help).
         </p>
     </div>
   );

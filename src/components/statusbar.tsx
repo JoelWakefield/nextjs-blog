@@ -7,12 +7,20 @@ export default function StatusBar(
   return (
     <div className={styles.statusBar}>
       <p className={styles.subtitle}>Status: {status ? "Complete" : "In Progress"}</p>
-      {code && <Link className={styles.secondary} href={code}>
+      {code && <Link
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className={styles.secondary} href={code}
+      >
         <p className={styles.statusLink}>
           Source Code
         </p>
       </Link>}
-      {play && <Link className={styles.secondary} href={play}>
+      {play && <Link
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className={styles.secondary} href={play}
+      >
         <p className={styles.statusLink}>
           Play Here
         </p>

@@ -1,7 +1,8 @@
 :root {
   --darkblue: #222034;
   --lightblue: #3f3f74;
-  --yellow: #5bd117;
+  --yellow: #61d61d;
+  --dark-yellow: #86d459;
   --red: #ff5858;
 }
 
@@ -14,7 +15,7 @@ body {
 body {
   width: 56rem;
   margin: auto;
-  color: var(--yellow);
+  color: var(--dark-yellow);
   background: var(--darkblue);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -39,6 +40,11 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+h1,
+h2 {
+  color: var(--yellow);
 }
 
 h1 {

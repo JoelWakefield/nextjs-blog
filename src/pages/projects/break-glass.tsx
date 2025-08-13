@@ -17,7 +17,7 @@ const BreakGlass: NextPageWithLayout = () => {
         />
 
         <p className={styles.content}>
-          After a few years (and many demos and prototypes) of game dev, I finally decided to try for a 2D platformer, this time for the <Link className={styles.primary} href="https://itch.io/jam/pirate16">Pirate Software - Game Jam 16</Link>. The theme was &ldquo;you are the weapon&rdquo;, and the idea of an 80&apos;s dystopian death-sport world started forming, where the player has to navigate an obstacle course by either landing on or smashing through glass platforms.
+          After a few years (and many demos and prototypes) of game dev, I finally decided to try for a 2D platformer, this time for the <Link target="_blank" rel="noopener noreferrer" className={styles.primary} href="https://itch.io/jam/pirate16">Pirate Software - Game Jam 16</Link>. The theme was &ldquo;you are the weapon&rdquo;, and the idea of an 80&apos;s dystopian death-sport world started forming, where the player has to navigate an obstacle course by either landing on or smashing through glass platforms.
         </p>
 
         <p className={styles.content}>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "@/app/page.module.css";
 
 export default function ContactCard() {
@@ -6,10 +7,34 @@ export default function ContactCard() {
       <h3>Contact Info</h3>
 
       <ul>
-        <li><a href="mailto:joel.tryangle@gmail.com">joel.tryangle@gmail.com</a></li>
-        <li><a href="https://www.twitch.tv/thetryangle">twitch/thetryangle</a></li>
-        <li><a href="https://www.youtube.com/@the-try-angle">youtube/@the-try-angle</a></li>
-        <li><a href="https://discord.gg/Pq35pKKT">discord invite</a></li>
+        <li><Link
+          target="_blank"
+          rel="noopener noreferrer" 
+          href="mailto:joel.tryangle@gmail.com"
+        >
+          joel.tryangle@gmail.com
+        </Link></li>
+        <li><Link
+          target="_blank" 
+          rel="noopener noreferrer" 
+          href="https://www.twitch.tv/thetryangle"
+        >
+          twitch/thetryangle
+        </Link></li>
+        <li><Link
+          target="_blank" 
+          rel="noopener noreferrer" 
+          href="https://www.youtube.com/@the-try-angle"
+          >
+            youtube/@the-try-angle
+          </Link></li>
+        <li><Link
+          target="_blank" 
+          rel="noopener noreferrer" 
+          href="https://discord.gg/zyXdHB4m"
+        >
+          discord invite
+        </Link></li>
       </ul>
     </div>
   )

@@ -17,7 +17,7 @@ const GameDesignPatterns: NextPageWithLayout = () => {
         />
 
         <p className={styles.content}>
-          After years of telling myself &ldquo;I&apos;ll learn C++... someday&rdquo;, I finally decided to buckle down and give it a try, and I&apos;m glad I did! While it was no cakewalk, I was able to put together a few small examples of some basic game design patterns (hence the project name). My reference was the excellent book <Link className={styles.primary} href="https://gameprogrammingpatterns.com/contents.html">Game Programming Patterns</Link> by Bob Nystrom; it&apos;s a great read, and very accessible (which is saying something for a book about design patterns).
+          After years of telling myself &ldquo;I&apos;ll learn C++... someday&rdquo;, I finally decided to buckle down and give it a try, and I&apos;m glad I did! While it was no cakewalk, I was able to put together a few small examples of some basic game design patterns (hence the project name). My reference was the excellent book <Link target="_blank" rel="noopener noreferrer" className={styles.primary} href="https://gameprogrammingpatterns.com/contents.html">Game Programming Patterns</Link> by Bob Nystrom; it&apos;s a great read, and very accessible (which is saying something for a book about design patterns).
         </p>
 
         <p className={styles.content}>
