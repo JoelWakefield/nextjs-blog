@@ -191,6 +191,11 @@ a.secondary {
   text-align: left;
 }
 
+.ctaText hr {
+  border: 2px solid var(--yellow);
+  margin-top: 0.25rem;
+}
+
 .ctaImage {
   border-radius: 1rem;
 }
@@ -206,6 +211,17 @@ a.secondary {
   padding: 1rem;
   font-size: 1.25rem;
   text-align: left;
+}
+
+.fullImage {
+  display: flex;
+  justify-content: center;
+}
+
+.codeBlock {
+  margin: 1rem 4rem;
+  padding: 0 2rem 2rem 2rem;
+  background-color: var(--deepblue);
 }
 
 .contact {
@@ -304,4 +320,26 @@ a.secondary {
 
 .projectDetails li a {
   padding: 0.5rem;
+}
+
+.ctaNav {
+  background-color: var(--yellow);
+  padding: 2rem 4rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ctaNav h2 {
+  color: black;
+  font-size: 3.75rem;
+  max-width: 32rem;
+}
+
+.ctaLinks {
+  display: flex;
+  column-gap: 1.5rem;
+  justify-content: space-between;
+  font-size: 1.75rem;
 }
