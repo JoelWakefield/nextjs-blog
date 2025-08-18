@@ -342,4 +342,5 @@ a.secondary {
   column-gap: 1.5rem;
   justify-content: space-between;
   font-size: 1.75rem;
+  text-align: center;
 }

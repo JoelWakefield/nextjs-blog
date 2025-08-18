@@ -4,8 +4,7 @@ import { NextPageWithLayout } from "@/pages/_app";
 import Layout from "@/components/layout";
 import StatusBar from "@/components/statusbar";
 import Details from "@/components/details";
-import PrimaryLink from "@/components/primaryLink";
-import Cta from "@/components/cta";
+import PrimaryLink from "@/components/primarylink";
 import styles from "@/app/page.module.css";
 
 const GomiMoni: NextPageWithLayout = () => {
@@ -83,7 +82,7 @@ const GomiMoni: NextPageWithLayout = () => {
           </p>
         </div>
 
-        <Image className={styles.ctaImage} src="/gomi_moni_lighting.gif" width={400} height={280} alt="Gomi Moni Lighting" />
+        <Image className={styles.ctaImage} src="/gomi_moni_lighting.gif" width={400} height={280} alt="Gomi Moni Lighting" unoptimized />
       </div>
 
       <div className={styles.ctaText}>
@@ -103,8 +102,6 @@ const GomiMoni: NextPageWithLayout = () => {
           </p>
         </div>
       </div>
-
-      <Cta />
     </div>
   );
 }

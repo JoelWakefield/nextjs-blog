@@ -5,8 +5,7 @@ import Layout from "@/components/layout";
 import StatusBar from "@/components/statusbar";
 import styles from "@/app/page.module.css";
 import Details from "@/components/details";
-import PrimaryLink from "@/components/primaryLink";
-import Cta from "@/components/cta";
+import PrimaryLink from "@/components/primarylink";
 
 const GameDesignPatterns: NextPageWithLayout = () => {
   
@@ -110,8 +109,6 @@ const GameDesignPatterns: NextPageWithLayout = () => {
           </p>
         </div>
       </div>
-
-      <Cta />
     </div>
   );
 }
