@@ -48,14 +48,13 @@ const VoxBox: NextPageWithLayout = () => {
             <hr />
 
             <p>
-              On the developer side, I&apos;ve got a few main features I want to game to exhibit: a user can tab through every interactable (for accessability), a user can modify sound data (might have to go a bit beyond what godot offers), and a user can import and export sound data. I&apos;ve heard of other creative sandbox style games which don&apos;t allow users to export their creations, which has always felt needlessly controlling to me - if we can&apos;t take our art with us, why use that environment to create at all?
+              On the developer side, I&apos;ve got a few main features I want to game to exhibit: a user can tab through every interactable (for accessability), a user can modify sound data (might have to go a bit beyond what godot offers), and a user can import and export sound data. I&apos;ve heard of other creative sandbox style games which don&apos;t allow users to export their creations, which has always felt needlessly controlling to me - control over our own expressions is vital to one&apos;s well being.
             </p>
           </div>
           <Image className={styles.ctaImage} src="/oddada.png" width={360} height={360} alt="ODDADA Game Poster" />
         </div>
 
         <div className={styles.ctaText}>
-          <Image className={styles.ctaImage} src="/oddada.png" width={360} height={360} alt="ODDADA Game Poster" />
           <div className={styles.content}>
             <h2 className={styles.infoHeading}>
               Interaction Abstraction
@@ -63,7 +62,7 @@ const VoxBox: NextPageWithLayout = () => {
             <hr />
 
             <p>
-              Talk about passing the device functions down to the holder, and the holder calling the function with its held cube. The cubes hold the music, the holder holds the cube, the device has holders.
+              Talk about the selection system.
             </p>
           </div>
         </div>

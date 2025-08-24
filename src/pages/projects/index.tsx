@@ -24,6 +24,13 @@ const Projects: NextPageWithLayout = () => {
         />
 
         <Card
+          title="Reapers Waltz"
+          href="/projects/reapers-waltz"
+          text="A 2D horror dungeon crawler made for the Isekai Horror Jam."
+          image="/reapers_waltz.png"
+        />
+
+        <Card
           title="Vox Box"
           href="/projects/vox-box"
           text="An interactive music making sandbox."
@@ -42,13 +49,6 @@ const Projects: NextPageWithLayout = () => {
           href="/projects/serpentes-3d"
           text="A 3D snake like game written in C."
           image="/serpentes_3d.png"
-        />
-
-        <Card
-          title="Reapers Waltz"
-          href="/projects/reapers-waltz"
-          text="A 2D horror dungeon crawler made for the Isekai Horror Jam."
-          image="/reapers_waltz.png"
         />
         
         <Card

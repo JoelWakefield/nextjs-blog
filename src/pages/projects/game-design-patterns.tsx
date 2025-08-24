@@ -6,6 +6,7 @@ import StatusBar from "@/components/statusbar";
 import styles from "@/app/page.module.css";
 import Details from "@/components/details";
 import PrimaryLink from "@/components/primarylink";
+import CodeBlock from "@/components/codeBlock";
 
 const GameDesignPatterns: NextPageWithLayout = () => {
   
@@ -38,7 +39,7 @@ const GameDesignPatterns: NextPageWithLayout = () => {
           <hr />
 
           <p>
-            After years of telling myself &ldquo;I&apos;ll learn C++... someday&rdquo;, I finally decided to buckle down and give it a try, and I&apos;m glad I did! While it was no cakewalk, I was able to put together a few small examples of some basic game design patterns (hence the project name). My reference was the excellent book <PrimaryLink href="https://gameprogrammingpatterns.com/contents.html">Game Programming Patterns</PrimaryLink> by Bob Nystrom (see photo (not the dog)); it&apos;s a great read, and very accessible (which is saying something for a book about design patterns).
+            After years of telling myself <q>I</q>ll learn C++... someday&rdquo;, I finally decided to buckle down and give it a try, and I&apos;m glad I did! While it was no cakewalk, I was able to put together a few small examples of some basic game design patterns (hence the project name). My reference was the excellent book <PrimaryLink href="https://gameprogrammingpatterns.com/contents.html">Game Programming Patterns</PrimaryLink> by Bob Nystrom (see photo (not the dog)); it&apos;s a great read, and very accessible (which is saying something for a book about design patterns).
           </p>
         </div>
       </div>
@@ -68,7 +69,7 @@ const GameDesignPatterns: NextPageWithLayout = () => {
           <hr />
 
           <p className={styles.content}>
-            I tried to implement a &ldquo;version&rdquo; of the <PrimaryLink href="https://gameprogrammingpatterns.com/event-queue.html">event queue pattern</PrimaryLink>, but it&apos;s more of an input queue (still important, especially in fighting and platforming games). Let&apos;s say you&apos;re building a combo system: you can chain multiple attacks together indefinitely. Since the inputs are constantly being &ldquo;read&rdquo; - clearing up space for new inputs to be written!
+            I tried to implement a <q>version</q> of the <PrimaryLink href="https://gameprogrammingpatterns.com/event-queue.html">event queue pattern</PrimaryLink>, but it&apos;s more of an input queue (still important, especially in fighting and platforming games). Let&apos;s say you&apos;re building a combo system: you can chain multiple attacks together indefinitely. Since the inputs are constantly being <q>read</q> - clearing up space for new inputs to be written!
           </p>
 
           <div className={styles.fullImage}>
@@ -79,21 +80,13 @@ const GameDesignPatterns: NextPageWithLayout = () => {
             User inputs are converted into commands and added to the queue - provided the queue isn&apos;t currently full. Notice how the modulus operator is applied after incrementing the <var>tail</var> - this ensures that the next command is stored at position <var>0</var>, thus allowing the same space in memory to be used to process a neverending chain of commands.
           </p>
 
-          <div className={styles.codeBlock}>
-            <pre>
-              <code>{addSnippet}</code>
-            </pre>
-          </div>
+          <CodeBlock content={addSnippet} />
           
           <p className={styles.content}>
-            During the update call, a timer is ticked down until it reaches zero; when it does reach zero, if there are any commands in the queue, the command at the <var>head</var> of the queue is returned. Like the <var>tail</var>, the <var>head</var> is also wrapped back around to position <var>0</var>, &drquo;chasing&dlqou; the tail until the queue is empty.
+            During the update call, a timer is ticked down until it reaches zero; when it does reach zero, if there are any commands in the queue, the command at the <var>head</var> of the queue is returned. Like the <var>tail</var>, the <var>head</var> is also wrapped back around to position <var>0</var>, <q>chasing</q> the tail until the queue is empty.
           </p>
 
-          <div className={styles.codeBlock}>
-            <pre>
-              <code>{updateSnippet}</code>
-            </pre>
-          </div>
+          <CodeBlock content={updateSnippet} />
         </div>
       </div>
 
