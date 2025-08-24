@@ -32,7 +32,7 @@ const Home: NextPageWithLayout = () => {
         <h2>Highlight Project</h2>
 
         <Card
-          href="/projects/gomi-moni"
+          href="/portfolio/gomi-moni"
           title="Gomi Moni"
           text="A 3D physics puzzle game about trash."
           image="/gomi_moni.png"
