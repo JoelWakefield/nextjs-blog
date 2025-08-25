@@ -22,7 +22,7 @@ const Projects: NextPageWithLayout = () => {
           text="A 3D snake like game written in C."
           image="/serpentes_3d.png"
         />
-        
+
         <Card
           title="Break Glass"
           href="/blogs/break-glass"

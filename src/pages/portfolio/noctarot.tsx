@@ -1,11 +1,11 @@
 import { ReactElement } from "react";
-import Image from "next/image";
 import { NextPageWithLayout } from "@/pages/_app";
 import Layout from "@/components/layout";
 import StatusBar from "@/components/statusbar";
 import Details from "@/components/details";
 import PrimaryLink from "@/components/primarylink";
 import styles from "@/app/page.module.css";
+import CodeBlock from "@/components/codeBlock";
 
 const NocTarot: NextPageWithLayout = () => {
   return (
@@ -23,6 +23,7 @@ const NocTarot: NextPageWithLayout = () => {
         genre="2D Narative Puzzle" 
         links={{
           "Godot": "https://godotengine.org/",
+          "Dialogic 2": "https://docs.dialogic.pro/introduction.html"
         }}
       />
 
@@ -34,23 +35,7 @@ const NocTarot: NextPageWithLayout = () => {
           <hr />
 
           <p>
-            This entry was made for the <PrimaryLink href="https://itch.io/jam/pompous-trash-2025">Society of Play - Pompous Trash Jam 2025</ PrimaryLink>. My original idea was to make a mecha game. I was sharing my ideas with a friend, and they suggested <q>why not make a game about roling trash into a hole</q>? Needless to say, I was hooked - such a simple idea, but simple is best (especially for a 2 week jam).
-          </p>
-        </div>
-        <Image className={styles.ctaImage} src="/pompous_trash_jam.png" width={460} height={300} alt="Pompous Trash Jam Banner" />
-      </div>
-
-      <div className={styles.ctaText}>
-        <Image className={styles.ctaImage} src="/gomi_moni_mechanics.png" width={420} height={300} alt="Gomi Moni Puzzle Solution" />
-
-        <div className={styles.content}>
-          <h2 className={styles.infoHeading}>
-            Mechanics
-          </h2>
-          <hr />
-
-          <p>
-            I first started out making a few <q>vehicles</q> for the player to control: normal, heavy, and flyer. The goal of each level is to role the normal (or Gomi) into a hole. The other vehicles are there to interact with specific mechanisms; when the mechanisms are activated, the hole is uncovered, <q>solving</q> the puzzle!
+            Here&apos;s a nutty idea: try making one game for 3 game jams. The result: NocTarot, a game about moths, tarot, and coffee. While the team I worked with could only submit to the <PrimaryLink href="https://itch.io/jam/the-tarot-jam">Tarot Jam</ PrimaryLink>, the other two jams still inspired our game (<PrimaryLink href="https://itch.io/jam/mothjam2025">Moths</ PrimaryLink> and Coffee).
           </p>
         </div>
       </div>
@@ -58,12 +43,28 @@ const NocTarot: NextPageWithLayout = () => {
       <div className={styles.ctaText}>
         <div className={styles.content}>
           <h2 className={styles.infoHeading}>
-            Testing and Prototypes
+            Out of the Dialog
           </h2>
           <hr />
 
           <p>
-            As development carried on, I kept creating little test scenes for everything: vehicles, mechanisms, systems, lighting, UI - if it was being used, it was getting a test. I found that testing out the smaller pieces helped provide a blank slate to focus on refining and refactoring parts of the game in isolation, which did speed up development time. It also forced me to think about how these parts would be connected together (something I&apos;ve often struggled with in the part - I always end up with a spagetti mess). For tests to be effective, they would need to <q>plug into</q> the systems they were testing, thus revealing how said system would be utilized within the game itself.
+            Due to the heavy narative aspects of this game, I decided to use an existing plugin: <PrimaryLink href="https://docs.dialogic.pro/">Dialogic 2</ PrimaryLink>. While this is an excellent dialog system, it seems to be built for visual novel games. Since NocTarot&apos;s gameplay is card and drink based, some bootstrapping needs to be applied to integrate the dialog into our game.
+          </p>
+
+          <p>
+            The narative is our foundation, therefore every time we want the player to interact with the other game elements, we must first send out a signal to ensure the rest of our game knows what&apos;s going on. A class called <var>DialogUI</var> processes these dialogic signals.
+          </p>
+
+          <CodeBlock content={signalExample} />
+
+          <p>
+            When dialogic recieves a dialog signal, it emits it&apos;s own godot signal called <var>signal_event</var>, which we handle with a custom function where we match each signal type and call a custom signal from the <var>DialogUI</var> class.
+          </p>
+
+          <CodeBlock content={dialogMatch} />
+
+          <p>
+             I know that I may have confused more than clarified, but remember that the main goal is to move from the Dialogic system to the rest of our game - all this is boilerplate to accomplish this.
           </p>
         </div>
       </div>
@@ -71,32 +72,43 @@ const NocTarot: NextPageWithLayout = () => {
       <div className={styles.ctaText}>
         <div className={styles.content}>
           <h2 className={styles.infoHeading}>
-            Lighting the Way
+            Back into the Dialog
           </h2>
           <hr />
 
           <p>
-            One aspect I also focused on a lot was presentation - my way of adding some <q>juice</q>. The camera in the main manu moves around a 3D scene; in fact, all the UI in the game is in 3D space (it felt more fun). The levels themselves use spotlights for illumination, but those same lights also start by focusing on specific parts of the level, providing <q>hints</q> to the player at that puzzles solution. Each light turns on, one by one, showing the player the steps of the solution; after they&apos;re all on, they expand to full light up the level.
+            Eventually, we want to return the player to the dialog system; for this, we use a custom variable called <var>next_chapter</var> and a system of <var>DialogueChecks</var>. The <var>next_chapter</var> tells Dialogic which <var>Timeline</var> to run next, but how do we know <i>when</i> to run said <var>Timeline</var>? That&apos;s where the <var>DialogueChecks</var> class enters the scene. (Is <q>Dialogue</q> the correct spelling? Excellent question! I won&apos;t be taking any more questions.)
           </p>
-        </div>
 
-        <Image className={styles.ctaImage} src="/gomi_moni_lighting.gif" width={400} height={280} alt="Gomi Moni Lighting" unoptimized />
+          <p>
+            Before we go further, let&apos;s look at how we setup our Dialogic... logic: we set the chapter, let our game know what the check for, then tell Dialogic that this timeline has ended.
+          </p>
+
+          <CodeBlock content={endTimeline} />
+
+          <p>
+            The <var>next_chapter</var> is just a variable we can set here and read from outside Dialogic; the <var>check_training_deck</var> signal is more complicated. Ultimately, we need to process this signal as a <q>check</q> type, <q>training</q> sub-type, with <q>deck</q> as the value we&apos;re checking for.
+          </p>
+          
+          <CodeBlock content={dialogChecks} />
+
+          <p>
+            There are many different places throughout our game code where a value might be checked, when a check does pass, we call <var>set_valid(...)</var>. Back in our main scene, we run the <var>current_passed()</var> function on every frame: if true, we tell Dialogic to start the <var>next_chapter</var> we set at the beginning of this process.
+          </p>
+
+          <CodeBlock content={nextChapter} />
+        </div>
       </div>
 
       <div className={styles.ctaText}>
         <div className={styles.content}>
           <h2 className={styles.infoHeading}>
-            Wrapup and Refinement
+            Status Report
           </h2>
           <hr />
 
-
           <p>
-            As the jam was nearing it&apos;s deadline, I realized that I could only pull off 6 levels (not the dozen-ish I originally planned). Still, this gave me time to iron out some kinks and refine the existing gameplay. This turned out to be a blessing; there were many errors to fix, and lots of juice I wanted to add.
-          </p>
-            
-          <p>
-            After the jam, I kept refining the game, even working on the selection system to ensure both mouse and controller could be used interchangeably throughout the whole game. Overall, it was a nice small project that convinced me that even small projects take time and love, and that quality is more important than quantity.
+            While our team did submit a working <PrimaryLink href="https://wake1st.itch.io/noctarot">prototype</PrimaryLink> in time for the <PrimaryLink href="https://itch.io/jam/the-tarot-jam">Tarot Jam</ PrimaryLink>, there&apos;s still plenty of bugs to be fixed and content to be added until this game feels more <q>finished</q>. A few people have agreed to continue working on it bit by bit. I for one want to improve the boilerplate - maybe it&apos;s as good as it can be, but I don&apos;t want to settle if a better approach could be built.
           </p>
         </div>
       </div>
@@ -113,3 +125,80 @@ NocTarot.getLayout = function getLayout(page: ReactElement) {
 }
  
 export default NocTarot;
+
+const signalExample = `
+[signal arg="transition_kitchen"]
+`;
+
+const dialogMatch = `
+	match command:
+		"transition":
+			Dialogic.paused = true
+			transition.emit(args)
+		"activate":
+			activate.emit(args)
+		"deactivate":
+			deactivate.emit(args)
+		"enter":
+			enter.emit()
+		"exit":
+			exit.emit()
+		"check":
+			check.emit(args)
+		"client":
+			client.emit(args)
+		"training":
+			training_ended.emit()
+`;
+
+const endTimeline = `
+set {next_chapter} = "card_training_hover"
+[signal arg="check_training_deck"]
+[end_timeline]
+`;
+
+const nextChapter = `
+func _process(_delta) -> void:
+	if DialogueChecks.current_passed():
+		dialogue_ui.start(Dialogic.VAR.next_chapter)
+`;
+
+const dialogChecks = `
+class_name DialogueChecks
+
+
+enum Types {
+	NONE,
+	DECK,
+	HOVERED,
+	SELECTED,
+	FINALIZED,
+	FORTUNE,
+	DRINK,
+}
+
+static var Possible: Dictionary[Types, bool] ={
+	Types.NONE: false,
+	Types.DECK: false,
+	Types.HOVERED: false,
+	Types.SELECTED: false,
+	Types.FINALIZED: false,
+	Types.FORTUNE: false,
+	Types.DRINK: false,
+}
+
+static var currentCheck: Types
+
+
+static func set_valid(type: Types) -> void:
+	Possible[type] = true
+
+
+static func current_passed() -> bool:
+	if Possible[currentCheck]:
+		Possible[currentCheck] = false
+		return true
+	else:
+		return false
+
+`;

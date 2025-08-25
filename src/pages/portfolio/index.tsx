@@ -18,13 +18,6 @@ const Portfolio: NextPageWithLayout = () => {
         />
 
         <Card
-          title="Game Design Patterns"
-          href="/portfolio/game-design-patterns"
-          text="A collection of C++ game design patterns implemented using Raylib."
-          image="/patterns.png"
-        />
-
-        <Card
           title="NocTarot"
           href="/portfolio/noctarot"
           text="A story game about moths, tarot, and making drinks."
@@ -39,11 +32,18 @@ const Portfolio: NextPageWithLayout = () => {
         />
 
         <Card
+          title="Game Design Patterns"
+          href="/portfolio/game-design-patterns"
+          text="A collection of C++ game design patterns implemented using Raylib."
+          image="/patterns.png"
+        />
+        
+        {/* <Card
           title="Vox Box"
           href="/portfolio/vox-box"
           text="A music making sandbox built with Godot."
           image="/vox_box.png"
-        />
+        /> */}
       </div>
     </>
   );
