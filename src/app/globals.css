@@ -1,7 +1,9 @@
 :root {
+  --deepblue: #101016;
   --darkblue: #222034;
   --lightblue: #3f3f74;
-  --yellow: #5bd117;
+  --yellow: #61d61d;
+  --dark-yellow: #86d459;
   --red: #ff5858;
 }
 
@@ -14,13 +16,14 @@ body {
 body {
   width: 56rem;
   margin: auto;
-  color: var(--yellow);
+  color: var(--dark-yellow);
   background: var(--darkblue);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 main {
   max-width: 56rem;
+  flex: 1;
 }
 
 * {
@@ -41,6 +44,11 @@ a {
   }
 }
 
+h1,
+h2 {
+  color: var(--yellow);
+}
+
 h1 {
   font-size: 6rem;
 }
@@ -54,4 +62,14 @@ h3 {
   color: black;
   padding-bottom: 1.5rem;
   font-size: 2.5rem;
+}
+
+var {
+  background-color: var(--deepblue);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+footer {
+  margin-top: 4rem;
 }

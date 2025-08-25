@@ -17,7 +17,7 @@ const Serpentes3D: NextPageWithLayout = () => {
         />
 
         <p className={styles.content}>
-          For my second 8 Hour Power Jam, I wanted to make a 3D version of the classic game, snake. I decided to use <Link className={styles.primary} href="https://www.raylib.com/index.html">Raylib</Link> because it&apos;s a great library, and I wanted the <s>suffering</s> challenge of trying to make a game in C.
+          For my second 8 Hour Power Jam, I wanted to make a 3D version of the classic game, snake. I decided to use <Link target="_blank" rel="noopener noreferrer" className={styles.primary} href="https://www.raylib.com/index.html">Raylib</Link> because it&apos;s a great library, and I wanted the <s>suffering</s> challenge of trying to make a game in C.
         </p>
 
         <p className={styles.content}>
