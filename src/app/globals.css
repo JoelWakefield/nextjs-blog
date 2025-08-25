@@ -23,6 +23,7 @@ body {
 
 main {
   max-width: 56rem;
+  flex: 1;
 }
 
 * {
@@ -61,4 +62,14 @@ h3 {
   color: black;
   padding-bottom: 1.5rem;
   font-size: 2.5rem;
+}
+
+var {
+  background-color: var(--deepblue);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+footer {
+  margin-top: 4rem;
 }

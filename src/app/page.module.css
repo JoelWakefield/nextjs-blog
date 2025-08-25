@@ -1,3 +1,9 @@
+.bodyWrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .page {
   margin: 2rem 1.5rem;
   max-width: 56rem;
@@ -222,6 +228,7 @@ a.secondary {
   margin: 1rem 4rem;
   padding: 0 2rem 2rem 2rem;
   background-color: var(--deepblue);
+  border-radius: 4px;
 }
 
 .contact {
@@ -324,8 +331,9 @@ a.secondary {
 
 .ctaNav {
   background-color: var(--yellow);
-  padding: 2rem 4rem;
-  border-radius: 2rem;
+  padding: 0 4rem 2rem 4rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -35,7 +35,7 @@ const NocTarot: NextPageWithLayout = () => {
           <hr />
 
           <p>
-            Here&apos;s a nutty idea: try making one game for 3 game jams. The result: NocTarot, a game about moths, tarot, and coffee. While the team I worked with could only submit to the <PrimaryLink href="https://itch.io/jam/the-tarot-jam">Tarot Jam</ PrimaryLink>, the other two jams still inspired our game (<PrimaryLink href="https://itch.io/jam/mothjam2025">Moths</ PrimaryLink> and Coffee).
+            Here&apos;s a nutty idea: try making one game for 3 game jams. Is it feasable? No, but to me the most important aspect of a game jam is the inspiration (the results often varry). So, what do you get when you make a game about moths, tarot, and coffee: NocTarot. While there wasn&apos;t enough time to submit to all 3 jams, the team I worked with was able to submit to one, the <PrimaryLink href="https://itch.io/jam/the-tarot-jam">Tarot Jam</ PrimaryLink>.
           </p>
         </div>
       </div>
@@ -48,11 +48,11 @@ const NocTarot: NextPageWithLayout = () => {
           <hr />
 
           <p>
-            Due to the heavy narative aspects of this game, I decided to use an existing plugin: <PrimaryLink href="https://docs.dialogic.pro/">Dialogic 2</ PrimaryLink>. While this is an excellent dialog system, it seems to be built for visual novel games. Since NocTarot&apos;s gameplay is card and drink based, some bootstrapping needs to be applied to integrate the dialog into our game.
+            Due to the heavy narative aspects of this game, I decided to use an existing plugin: <PrimaryLink href="https://docs.dialogic.pro/">Dialogic 2</ PrimaryLink>. While this is an excellent dialog system, it seems to be built for visual novel games. Since NocTarot&apos;s main mechanics are not dialog based, some bootstrapping needs to be applied to integrate Dialogic into our game.
           </p>
 
           <p>
-            The narative is our foundation, therefore every time we want the player to interact with the other game elements, we must first send out a signal to ensure the rest of our game knows what&apos;s going on. A class called <var>DialogUI</var> processes these dialogic signals.
+            The narative is our foundation, therefore every time we want the player to interact with the other game elements, we must first send out a signal to ensure the rest of our game knows what&apos;s going on. Dialogic has the ability to send signals with a string argument, and can be written into a Dialogic <var>Timeline</var> via text.
           </p>
 
           <CodeBlock content={signalExample} />
@@ -81,19 +81,19 @@ const NocTarot: NextPageWithLayout = () => {
           </p>
 
           <p>
-            Before we go further, let&apos;s look at how we setup our Dialogic... logic: we set the chapter, let our game know what the check for, then tell Dialogic that this timeline has ended.
+            Before we go further, let&apos;s look at how we setup our Dialogic... logic: we set the next chapter, let our game know what the check for, then tell Dialogic that the current timeline has ended.
           </p>
 
           <CodeBlock content={endTimeline} />
 
           <p>
-            The <var>next_chapter</var> is just a variable we can set here and read from outside Dialogic; the <var>check_training_deck</var> signal is more complicated. Ultimately, we need to process this signal as a <q>check</q> type, <q>training</q> sub-type, with <q>deck</q> as the value we&apos;re checking for.
+            The <var>next_chapter</var> is just a variable we can set here and read from outside Dialogic; the <var>check_training_deck</var> signal is more complicated. Ultimately, we need to process this signal as a <q>check</q> type, <q>training</q> sub-type, with <q>deck</q> as the value we&apos;re checking for. Below you can see the <var>DialogueChecks</var> class and it&apos;s inner workings.
           </p>
           
           <CodeBlock content={dialogChecks} />
 
           <p>
-            There are many different places throughout our game code where a value might be checked, when a check does pass, we call <var>set_valid(...)</var>. Back in our main scene, we run the <var>current_passed()</var> function on every frame: if true, we tell Dialogic to start the <var>next_chapter</var> we set at the beginning of this process.
+            Since there are many different places throughout our game code where a value might be checked, we use static functions and properties. When a check does pass, we call <var>set_valid(...)</var> on that check type. Back in our main scene, we run the <var>current_passed()</var> function on every frame; if true, we tell Dialogic to start the <var>next_chapter</var>.
           </p>
 
           <CodeBlock content={nextChapter} />
@@ -131,6 +131,16 @@ const signalExample = `
 `;
 
 const dialogMatch = `
+func _ready() -> void:
+	Dialogic.signal_event.connect(_handle_text_signal)
+	Dialogic.timeline_ended.connect(_handle_timeline_ended)
+
+
+func _handle_text_signal(argument: String) -> void:
+	var args = argument.split("_")
+	var command = args[0]
+	args.remove_at(0)
+	
 	match command:
 		"transition":
 			Dialogic.paused = true
