@@ -22,9 +22,16 @@ const Home: NextPageWithLayout = () => {
       </div>
 
       <div className={styles.ctaText}>
-        <p>
-          Hello world! Here you shall find a number of projects I&apos;ve worked on over the past year. While most of my professional career revolves around business applications, in my spare time, I enjoy learning other languages, frameworks, design patterns, etc. This site highlights a few of those projects and documents the process of making them.
-        </p>
+        <div className={styles.content}>
+          <p>
+            Hello world! Here you shall find some of projects I&apos;ve worked on over the past year. While most of my professional career revolves around business applications, in my spare time, I enjoy (and suffer) game development.
+          </p>
+
+          <p>
+            Portfolio is a more official <q>check out what I made</q>, highlighting specific features of a game. Blogs are more informal <q>here&apos;s a thing</q>, where a project is discussed in a broader sense.
+          </p>
+        </div>
+
         <ContactCard />
       </div>
 
