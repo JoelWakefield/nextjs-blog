@@ -15,6 +15,11 @@ const Portfolio: NextPageWithLayout = () => {
           href="/portfolio/gomi-moni"
           text="A 3D physics puzzle game made for the Pompous Trash Jam 2025."
           image="/gomi_moni.png"
+          links={{
+            "Godot": "https://godotengine.org/",
+            "Blockbench": "https://www.blockbench.net/",
+            "BeepBox": "https://www.beepbox.co/"
+          }}
         />
 
         <Card
@@ -22,6 +27,10 @@ const Portfolio: NextPageWithLayout = () => {
           href="/portfolio/noctarot"
           text="A story game about moths, tarot, and making drinks."
           image="/noctarot.png"
+          links={{
+            "Godot": "https://godotengine.org/",
+            "Dialogic 2": "https://docs.dialogic.pro/introduction.html"
+          }}
         />
 
         <Card
@@ -29,6 +38,9 @@ const Portfolio: NextPageWithLayout = () => {
           href="/portfolio/reapers-waltz"
           text="A 2D horror dungeon crawler made for the Isekai Horror Jam."
           image="/reapers_waltz.png"
+          links={{
+            "Godot": "https://godotengine.org/",
+          }}
         />
 
         <Card
@@ -36,6 +48,10 @@ const Portfolio: NextPageWithLayout = () => {
           href="/portfolio/game-design-patterns"
           text="A collection of C++ game design patterns implemented using Raylib."
           image="/patterns.png"
+          links={{
+            "Raylib": "https://www.raylib.com/",
+            "Game Design Pattens": "https://gameprogrammingpatterns.com/"
+          }}
         />
         
         {/* <Card

@@ -1,4 +1,3 @@
-import ContactCard from "@/components/contact";
 import styles from "@/app/page.module.css";
 import Card from "@/components/card";
 import { NextPageWithLayout } from "./_app";
@@ -24,15 +23,13 @@ const Home: NextPageWithLayout = () => {
       <div className={styles.ctaText}>
         <div className={styles.content}>
           <p>
-            Hello world! Here you shall find some of projects I&apos;ve worked on over the past year. While most of my professional career revolves around business applications, in my spare time, I enjoy (and suffer) game development.
+            Hello world! I&apos;m Joel Wakfield, and here&apos;s where I showcase some of the projects I&apos;ve worked on as a game developer.
           </p>
 
           <p>
-            Portfolio is a more official <q>check out what I made</q>, highlighting specific features of a game. Blogs are more informal <q>here&apos;s a thing</q>, where a project is discussed in a broader sense.
+            The portfolio pages are a more official, <q>check out what I made</q>, highlighting specific features of a game. The blogs are a more informal, <q>here&apos;s a thing</q>, where a project is discussed in a broader sense.
           </p>
         </div>
-
-        <ContactCard />
       </div>
 
       <div className={styles.ctaList}>
@@ -43,6 +40,11 @@ const Home: NextPageWithLayout = () => {
           title="Gomi Moni"
           text="A 3D physics puzzle game about trash."
           image="/gomi_moni.png"
+          links={{
+            "Godot": "https://godotengine.org/",
+            "Blockbench": "https://www.blockbench.net/",
+            "BeepBox": "https://www.beepbox.co/"
+          }}
         />
       </div>
     </>
